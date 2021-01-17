@@ -49,7 +49,9 @@ class InterestController extends Controller
         ]);
 
         $interest->save();
-        return $this->index();
+        return $this->index()->with([
+            'message_success' => "THe interest " . $interest->name . " was created"
+        ]);
     }
 
     /**
